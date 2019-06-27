@@ -1,0 +1,21 @@
+{
+    "name": "everalan/laravel-helper",
+    "description": "",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "league/fractal": "^0.18.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alan",
+            "email": "everalan@everalan.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Everalan\\Laravel\\Helper\\": "src/"
+        }
+    }
+}
