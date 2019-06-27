@@ -2,7 +2,7 @@
 
 use Everalan\Api\Http\Factory;
 
-trait Helper
+trait Helpers
 {
     public function response()
     {
