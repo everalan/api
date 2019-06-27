@@ -96,6 +96,11 @@ class Factory
         return new Response($this->manager->createData(new \League\Fractal\Resource\Item($item, $transformer))->toArray(), 200);
     }
 
+    public function array($arr)
+    {
+        return new Response($arr);
+    }
+
     /**
      * Bind a paginator to a transformer and start building a response.
      *
