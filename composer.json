@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Everalan\\Laravel\\Helper\\": "src/"
+            "Everalan\\Api\\": "src/"
         }
     }
 }

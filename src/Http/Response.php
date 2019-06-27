@@ -1,4 +1,4 @@
-<?php namespace Everalan\Laravel\Helper\Http;
+<?php namespace Everalan\Api\Http;
 
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Pagination\Paginator;

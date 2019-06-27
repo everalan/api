@@ -1,9 +1,9 @@
 <?php
 
-namespace Everalan\Laravel\Helper\Http\Middleware;
+namespace Everalan\Api\Http\Middleware;
 
 use Closure;
-use Everalan\Laravel\Helper\Exception\Handler;
+use Everalan\Api\Exception\Handler;
 use Illuminate\Contracts\Container\Container;
 
 class Request

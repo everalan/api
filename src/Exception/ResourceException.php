@@ -1,6 +1,6 @@
 <?php
 
-namespace Everalan\Laravel\Helper\Exception;
+namespace Everalan\Api\Exception;
 
 use Exception;
 use Illuminate\Support\MessageBag;

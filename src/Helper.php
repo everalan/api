@@ -1,6 +1,6 @@
-<?php namespace Everalan\Laravel\Helper;
+<?php namespace Everalan\Api;
 
-use Everalan\Laravel\Helper\Http\Factory;
+use Everalan\Api\Http\Factory;
 
 trait Helper
 {
