@@ -1,6 +1,6 @@
 {
-    "name": "everalan/laravel-helper",
-    "description": "",
+    "name": "everalan/api",
+    "description": "A RESTful API package for the Laravel frameworks, Like dingo/api but more simple",
     "type": "library",
     "require": {
         "php": ">=7.0",
