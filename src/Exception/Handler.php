@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends \App\Exceptions\Handler
 {
@@ -13,7 +14,7 @@ class Handler extends \App\Exceptions\Handler
     {
         // Convert Eloquent's 500 ModelNotFoundException into a 404 NotFoundHttpException
         if ($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
-            $exception = new NotFoundHttpException($exception->getMessage(), $exception);
+            $exception = new NotFoundHttpException('Item Not Found.', $exception);
         }
 
         return new Response($this->prepareReplacements($exception), $this->getStatusCode($exception));
