@@ -34,6 +34,7 @@ class Handler extends \App\Exceptions\Handler
             'message' => $exception->getMessage(),
             'code' => $this->getStatusCode($exception),
         ];
+        //测试一下
 
         if (!($exception instanceof HttpException))
         {
