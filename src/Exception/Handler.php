@@ -41,8 +41,9 @@ class Handler extends \App\Exceptions\Handler
         }
 
         if ($exception instanceof ValidationException) {
-            $replacements['message'] = $exception->errors()[0];
             $replacements['status_code'] = $exception->status;
+            $replacements['errors'] = $exception->errors();
+            $replacements['message'] = array_values($exception->errors())[0];
         }
 
         if ($code = $exception->getCode()) {
