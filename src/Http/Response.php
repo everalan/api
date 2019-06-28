@@ -22,7 +22,7 @@ class Factory
      *
      * @param null|string $location
      *
-     * @return \Dingo\Api\Http\Response
+     * @return \Everalan\Api\Http\Response
      */
     public function created($location = null, $content = null)
     {
@@ -42,7 +42,7 @@ class Factory
      * @param null|string $location
      * @param mixed $content
      *
-     * @return \Dingo\Api\Http\Response
+     * @return \Everalan\Api\Http\Response
      */
     public function accepted($location = null, $content = null)
     {
@@ -59,7 +59,7 @@ class Factory
     /**
      * Respond with a no content response.
      *
-     * @return \Dingo\Api\Http\Response
+     * @return \Everalan\Api\Http\Response
      */
     public function noContent()
     {
@@ -74,7 +74,7 @@ class Factory
      * @param \Illuminate\Support\Collection $collection
      * @param string|callable|object $transformer
      *
-     * @return \Dingo\Api\Http\Response
+     * @return \Everalan\Api\Http\Response
      */
     public function collection(Collection $collection, $transformer)
     {
@@ -89,7 +89,7 @@ class Factory
      * @param array $parameters
      * @param \Closure $after
      *
-     * @return \Dingo\Api\Http\Response
+     * @return \Everalan\Api\Http\Response
      */
     public function item($item, $transformer)
     {
@@ -109,7 +109,7 @@ class Factory
      * @param array $parameters
      * @param \Closure $after
      *
-     * @return \Dingo\Api\Http\Response
+     * @return \Everalan\Api\Http\Response
      */
     public function paginator(Paginator $paginator, $transformer)
     {
