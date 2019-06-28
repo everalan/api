@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends \App\Exceptions\Handler
 {
@@ -33,6 +34,11 @@ class Handler extends \App\Exceptions\Handler
             'message' => $exception->getMessage(),
             'code' => $this->getStatusCode($exception),
         ];
+
+        if (!($exception instanceof HttpException))
+        {
+            $replacements['message'] = 'Server Error.';
+        }
 
         if ($exception instanceof ValidationException) {
             $replacements['message'] = $exception->errors()[0];
