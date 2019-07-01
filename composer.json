@@ -1,6 +1,6 @@
 {
     "name": "everalan/api",
-    "description": "A RESTful API package for the Laravel frameworks, Like dingo/api but more simple",
+    "description": "放弃了 Dingo\\Api 对系统的侵入式修改，同时又实现了大多数功能，同时增加了一些常用功能，同时支持多套 API 并存，用起来更优雅。A RESTful API package for the Laravel frameworks, Like dingo/api but more simpleA RESTful API package for the Laravel frameworks, Like dingo/api but more simple",
     "type": "library",
     "require": {
         "php": ">=7.0",
