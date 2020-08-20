@@ -2,13 +2,13 @@
 
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Pagination\Paginator;
-use Illuminate\Http\Response;
+use Illuminate\Http\Response as HttpResponse;
 use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Serializer\ArraySerializer;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class Factory
+class Response
 {
     protected $manager;
     public function __construct()
@@ -18,6 +18,17 @@ class Factory
     }
 
     /**
+     * 通用成功响应
+     * @return HttpResponse
+     */
+    public function success()
+    {
+        $response = new HttpResponse($content);
+        $response->setStatusCode(200);
+
+        return $response;
+    }
+    /**
      * Respond with a created response and associate a location if provided.
      *
      * @param null|string $location
@@ -26,7 +37,7 @@ class Factory
      */
     public function created($location = null, $content = null)
     {
-        $response = new Response($content);
+        $response = new HttpResponse($content);
         $response->setStatusCode(201);
 
         if (!is_null($location)) {
@@ -46,7 +57,7 @@ class Factory
      */
     public function accepted($location = null, $content = null)
     {
-        $response = new Response($content);
+        $response = new HttpResponse($content);
         $response->setStatusCode(202);
 
         if (!is_null($location)) {
@@ -63,7 +74,7 @@ class Factory
      */
     public function noContent()
     {
-        $response = new Response(null);
+        $response = new HttpResponse(null);
 
         return $response->setStatusCode(204);
     }
@@ -78,7 +89,7 @@ class Factory
      */
     public function collection(Collection $collection, $transformer)
     {
-        return new Response($this->manager->createData(new \League\Fractal\Resource\Collection($collection, $transformer))->toArray(), 200);
+        return new HttpResponse($this->manager->createData(new \League\Fractal\Resource\Collection($collection, $transformer))->toArray(), 200);
     }
 
     /**
