@@ -104,12 +104,12 @@ class Response
      */
     public function item($item, $transformer)
     {
-        return new Response($this->manager->createData(new \League\Fractal\Resource\Item($item, $transformer))->toArray(), 200);
+        return new HttpResponse($this->manager->createData(new \League\Fractal\Resource\Item($item, $transformer))->toArray(), 200);
     }
 
     public function array($arr)
     {
-        return new Response($arr);
+        return new HttpResponse($arr);
     }
 
     /**
@@ -129,7 +129,7 @@ class Response
         $resource = new \League\Fractal\Resource\Collection($books, $transformer);
         $resource->setPaginator(new IlluminatePaginatorAdapter($paginator));
 
-        return new Response($this->manager->createData($resource)->toArray(), 200);
+        return new HttpResponse($this->manager->createData($resource)->toArray(), 200);
     }
 
     /**
