@@ -23,7 +23,7 @@ class Response
      */
     public function success()
     {
-        $response = new HttpResponse($content);
+        $response = new HttpResponse();
         $response->setStatusCode(200);
 
         return $response;
