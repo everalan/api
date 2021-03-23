@@ -14,7 +14,11 @@ class Response
     public function __construct()
     {
         $this->manager = new Manager();
-        $this->manager->setSerializer(new ArraySerializer());
+        if($class = config('everalanapi.serializer')) {
+            $this->manager->setSerializer(new $class);
+        }else{
+            $this->manager->setSerializer(new ArraySerializer());
+        }
     }
 
     /**
