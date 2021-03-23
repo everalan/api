@@ -91,9 +91,9 @@ class Response
      *
      * @return \Everalan\Api\Http\Response
      */
-    public function collection(Collection $collection, $transformer)
+    public function collection(Collection $collection, $transformer, $resourceKey)
     {
-        return new HttpResponse($this->manager->createData(new \League\Fractal\Resource\Collection($collection, $transformer))->toArray(), 200);
+        return new HttpResponse($this->manager->createData(new \League\Fractal\Resource\Collection($collection, $transformer, $resourceKey))->toArray(), 200);
     }
 
     /**

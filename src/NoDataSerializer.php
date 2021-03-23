@@ -5,6 +5,10 @@ use League\Fractal\Serializer\ArraySerializer;
 class NoDataSerializer extends ArraySerializer {
     public function collection($resourceKey, array $data)
     {
-        return $data;
+        if($resourceKey === false) {
+            return $data;
+        }else{
+            return [$resourceKey ?: 'data' => $data];
+        }
     }
 }
